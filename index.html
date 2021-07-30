@@ -2,10 +2,89 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://kit.fontawesome.com/ba221629d2.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="./css/styles.css">
+	<title>ohmyfood</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100&family=Shrikhand&display=swap" rel="stylesheet">
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100&family=Shrikhand&display=swap');
+	</style>
 </head>
 <body>
-
+	<header>
+		<h1  class="titres" id="logo">ohmyfood</h1>
+	</header>
+	<section>
+		<nav>
+			<i class="fas fa-map-marker-alt"></i>
+			<form  method="POST" action="#">
+				<label for="localisation"></label>
+				<input type="search" placeholder="Paris,Belleville" name="localisation" id="localisation">
+				</form>
+		</nav>
+			<h2 class="titres">Réservez le menu qui vous convient</h2>
+			<p>Découvrez des restaurants d’exception, sélectionnés par nos soins.</p>
+			<nav>
+				<form>
+				<input type="button" value="Explorez nos restaurants">
+				<label for="sudmit"></label>
+				</form>
+			</nav>
+	</section>
+		<aside>
+			<h2 class="titres">Fonctionnement</h2>
+			<ul class="function">
+				<li class="function__use base_card"><i class="fas fa-mobile-alt"></i>Choisissez un restaurant</li>
+				<li class="function__use base_card"><i class="fas fa-ellipsis-v"></i><i class="fas fa-bars"></i>Composez votre menu</li>
+				<li class="function__use base_card"><i class="fas fa-store"></i>Dégustez au restaurant</li>
+			</ul>
+		</aside>
+	<section>
+		<h2 class="titres">Restaurants</h2>
+		<article class="menu base_card">
+			<a class="menu__link" href="">
+				<img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du goût">
+				<h3>La palette du goût</h3>
+				<p>Ménilmontant</p>
+			</a>
+			<span class="heart"><i class="far fa-heart"></i></span>
+		</article>
+		<article class="menu base_card">
+			<a class="menu__link" href="">
+				<img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La palette du goût">
+				<h3>La palette du goût</h3>
+				<p>Ménilmontant</p>
+			</a>
+			<span class="heart"><i class="far fa-heart"></i></span>
+		</article>
+		<article class="menu base_card">
+			<a class="menu__link" href="">
+				<img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="La palette du goût">
+				<h3>La palette du goût</h3>
+				<p>Ménilmontant</p>
+			</a>
+			<span class="heart"><i class="far fa-heart"></i></span>
+		</article>
+		<article class="menu base_card">
+			<a class="menu__link" href="">
+				<img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="La palette du goût">
+				<h3>La palette du goût</h3>
+				<p>Ménilmontant</p>
+			</a>
+			<span class="heart"><i class="far fa-heart"></i></span>
+		</article>
+	</section>
+	<footer>
+		<h2 class="titres">ohmyfood</h2>
+		<ul>
+			<li><i class="fas fa-utensils"></i><a>Proposer un restaurant</a></li>
+			<li><i class="fas fa-hands-helping"></i><a>Devenir partenaire</a></li>
+			<li><a>Mentions légales</a></li>
+			<li><a href="mailto:contact@ohmyfood.com">Contact</a></li>
+		</ul>
+	</footer>
 </body>
 </html>

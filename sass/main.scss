@@ -1,0 +1,15 @@
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/placeholders";
+
+@import "./base/base";
+@import "./base/typography";
+
+@import "./composants/buttons";
+
+@import "./layout/header";
+@import "./layout/footer";
+
+@import "./pages/accueil";
+@import "./pages/menu";
