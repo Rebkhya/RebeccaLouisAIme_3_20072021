@@ -1,0 +1,22 @@
+//centrer
+@mixin flexMid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+//flex
+
+//dimension card
+@mixin card($color: $color-base, $bord:$bord-rad) {
+    background-color: $color;
+    border-radius: $bord;
+    height: auto;
+}
+//dimension image card
+@mixin card-img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 20px 20px 0px 0px;
+    object-position: 50% 63%;
+}
