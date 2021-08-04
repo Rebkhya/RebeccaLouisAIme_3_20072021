@@ -1,0 +1,80 @@
+.header_logo{
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    & h1{
+        padding-right: 3rem;
+    }
+}
+.liste__underline{
+    border-bottom: 2px solid $color-tertiary;
+    width: 10%;
+    padding: 0;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+
+.liste{
+    &__menu{
+        @include card($color-back, 30px);
+        text-align: left;
+        z-index: 1;
+        position: relative;
+        top: -2.5rem;
+    }
+    & img{
+        width: 100%;
+        position: relative;
+        z-index: -1;
+    }
+    & article{
+        @include card($bord:20px);
+        height: 3rem;
+        margin: .5rem;
+        position: relative;
+    }
+}
+.liste__text{
+        padding: .5em .5rem;
+        & span{
+            font-weight: bold;
+            position: absolute;
+            z-index: 1;
+            right: 20px;
+            &:active{
+                transition: transform 1s;
+                transform: rotate(45deg) translateX(-60px);
+                & ::after{
+                    content: "";
+                    border-right: none;
+                    border-radius: 0 20px 20px 0;
+                    position: absolute;
+                    z-index: -1;
+                    background: $color-tertiary;
+                    width: 40px;
+                    height: 2.5rem;
+                    padding:  .5em .5rem;
+                    right: -80px;
+                    top: -30px;
+                }
+            }
+        }
+}
+.liste__check{
+     i{
+        font-size: 1.5rem;
+        color: $color-base;
+        right: 60px;
+        transform: rotate(0);
+    }
+        &::after{
+            position: absolute;
+            right: -60px;
+            background: $color-tertiary;
+            width: 40px;
+            height: 2.5rem;
+           transform: translateX(60px); 
+       }
+
+}

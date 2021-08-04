@@ -1,6 +1,8 @@
 body{
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+    font-size: medium;
+    text-align: center;
 }
 
 .titres{
@@ -9,12 +11,14 @@ body{
 h1{
     font-size: 2rem;
 }
-h2, h3{
-    font-size: 1.4rem;
+h2{
     font-weight: bold;
+    padding: 2rem 0 1rem 1rem;
 }
 h3{
     padding-left: 1rem;
+    font-size: 1.4rem;
+    font-weight: bold;
 }
 ul{
     list-style: none;
@@ -24,4 +28,16 @@ a{
 }
 h1, h2, h3{
     margin: 0;
+}
+p{
+    margin: 0;
+}
+.liste__text{
+    h3{
+        font-size: 1.1rem;
+    }
+    p{
+        font-size: 0.8rem;
+        padding-left: 1rem;
+    }
 }
