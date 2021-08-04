@@ -199,6 +199,7 @@ p {
 .menu {
   flex-wrap: wrap;
   padding-bottom: 3rem;
+  text-align: left;
   background-color: #f6f6f6;
   border-radius: 0, 20px, 50%;
   height: auto;

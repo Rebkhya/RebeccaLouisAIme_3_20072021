@@ -85,6 +85,7 @@
 .menu{
     flex-wrap: wrap;
     padding-bottom: 3rem;
+    text-align: left;
     @include card($color-back);
         &__card{
         margin: .5rem;
