@@ -10,3 +10,16 @@ body{
     display: flex;
     flex-direction: row;
 }
+.titres__icon{
+    justify-content: space-around;
+   span{
+       margin-left: 2rem;
+   }
+}
+
+.liste__underline{
+    border-bottom: 2px solid $color-tertiary;
+    width: 10%;
+    padding: 0;
+    margin: 1rem;
+}

@@ -1,6 +1,6 @@
  //presentation, barre de localisation
  .presentation{
-    @include card($color-back,0); 
+    @include card($color-back); 
     @include flexMid;
     flex-wrap: wrap;
     text-align: center;
@@ -50,35 +50,66 @@
         flex-wrap: wrap;
         justify-content: flex-start;
     }
-    li{
-        &::before{
-            content: '';
+    ol{
+
+        counter-reset: li;
+    }
+    li::before{
+            content: counter(li);
+            counter-increment: li;
+            color: $color-base;
+            @include flexMid;
             background-color: $color-primary;
             border-radius: 50%;
-            width: 1.2rem;
-            height: 1.2rem;
+            width: 1.5rem;
+            height: 1.5rem;
             position: relative;
             left: -.6rem;
             z-index: 1;
         }
-    }
 }
 .function__use{
-    @include card($color-back, $bord:20px);
+    @include card($color-primary, $bord: map-get($bord-rad, card-card));
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    box-shadow: .15rem .15em .8rem .1rem rgb(204, 204, 204);
+    box-shadow: $shadow;
     font-weight: 500;
     font-size: .9rem;
     margin: .7rem 0;
     height: 4rem;
     position: relative;
     width: 90%;
-    z-index: -1;
-        & span{
-        opacity: 60%;
+    cursor: pointer;
+    opacity: 1;
+    z-index: 1;
+    &:hover {
+        &::after{
+            opacity: .9;
+            box-shadow: $shadow + $shadow;
+        }
+        & i{
+            color: $color-primary;
+        }
+    }  
+}
+.function__use{
+    & span{
+        color: grey;
         padding-right: 1rem;
+        }
+    &::after{
+        position: absolute;
+        content: "";
+        border-radius: map-get($bord-rad, card-card);
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        background-color: $color-base;
+        opacity: 1;
+        transition: opacity 250ms;
     }
 }
 //menu
@@ -89,13 +120,14 @@
     @include card($color-back);
         &__card{
         margin: .5rem;
-        @include card($bord:20px);
+        @include card ($bord: map-get($bord-rad, card-card));
         height: 14rem;
             &__link{
                 flex-wrap: wrap;
             }
           }
 }
+
 .menu__card__img{
     @include card-img;
     margin-bottom: .5rem;

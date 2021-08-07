@@ -7,7 +7,7 @@
 //flex
 
 //dimension card
-@mixin card($color: $color-base, $bord:$bord-rad) {
+@mixin card($color: $color-base, $bord: map-get($bord-rad, back-card)) {
     background-color: $color;
     border-radius: $bord;
     height: auto;
@@ -20,3 +20,40 @@
     border-radius: 20px 20px 0px 0px;
     object-position: 50% 63%;
 }
+@mixin btn {
+        margin: 1rem 0;
+        border-radius: 100rem;
+        border: none;
+        color: $color-base;
+        padding: $padding;
+        box-shadow: $shadow;
+        background-image: $color-deg;
+        background-position: right;
+        cursor: pointer;
+        opacity: 1;
+        transition: opacity 500ms;
+        &:hover{
+            opacity: .7;
+            box-shadow: $shadow + $shadow;
+        }
+}
+
+@mixin new{
+    &::before{
+        content: "Nouveau";
+        background-color: $color-tertiary;
+        position: absolute;
+        font-weight: 500;
+        font-size: .8rem;
+        color: darken($color-tertiary, 45%);
+        right: 0;
+        margin: .7rem 1rem;
+        padding: .2rem .4rem;
+        @include card($color: $color-tertiary)
+    }
+}
+
+@mixin heading-shadow($color: tint($colour-primary)){
+    background-color: $color;
+    box-shadow: $shadow * 2;
+    }

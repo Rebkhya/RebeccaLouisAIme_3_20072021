@@ -1,13 +1,24 @@
 $color-primary:#9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary:  #99E2D0;
-$color-shadow: #eaeaea;;
+$color-shadow: #d3d3d3;
 $color-back:  #f6f6f6;
 $color-footer: #353535;
 $color-base: #ffffff;
 $color-card: $color-back, $color-base, $color-shadow;
-$color-deg: linear-gradient($color-secondary, $color-primary 105%);
+$color-deg: linear-gradient($color-primary, $color-secondary);
 
 $height: (10rem, 15rem, 20rem);
-$bord-rad: (0, 20px, 50%);
-$shadow: .15rem .15em .8rem .1rem;
+$bord-rad:(
+back-card: 0,
+menu-card: 30px 30px 0 0 ,
+card-card: 20px 20px 20px 20px);
+$shadow:  1px 1px 4px 1px $color-shadow;
+$padding: .8rem 1.2rem;
+
+
+
+$breakpoints: (
+  tablet: 992px,
+  destock: 1200px
+);

@@ -1,16 +1,4 @@
 //bouton
 .btn{
-    margin-bottom: 3rem;
-    & input{
-        height: 2.5rem;
-        width: 12rem;
-        font-weight: 500;
-        border-radius: 100rem;
-        border: none;
-        color: $color-base;
-        padding: .5rem;
-        margin-top: 1rem;
-        background: $color-deg;
-    }
-
+        @include btn;
 }

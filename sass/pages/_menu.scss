@@ -5,19 +5,15 @@
     & h1{
         padding-right: 3rem;
     }
-}
-.liste__underline{
-    border-bottom: 2px solid $color-tertiary;
-    width: 10%;
-    padding: 0;
-    font-weight: 400;
-    font-size: 1.2rem;
-    margin-left: 1rem;
+    i{
+        color: black;
+    }
 }
 
+
 .liste{
-    &__menu{
-        @include card($color-back, 30px);
+        &__menu{
+        @include card($color-back,  $bord: map-get($bord-rad, menu-card));
         text-align: left;
         z-index: 1;
         position: relative;
@@ -29,7 +25,7 @@
         z-index: -1;
     }
     & article{
-        @include card($bord:20px);
+        @include card($bord: map-get($bord-rad, card-card));
         height: 3rem;
         margin: .5rem;
         position: relative;
@@ -41,10 +37,8 @@
             font-weight: bold;
             position: absolute;
             z-index: 1;
-            right: 20px;
+            right: 0;
             &:active{
-                transition: transform 1s;
-                transform: rotate(45deg) translateX(-60px);
                 & ::after{
                     content: "";
                     border-right: none;
@@ -55,26 +49,27 @@
                     width: 40px;
                     height: 2.5rem;
                     padding:  .5em .5rem;
-                    right: -80px;
-                    top: -30px;
+                    right: 0;
+                    top: 0;
                 }
             }
         }
 }
 .liste__check{
-     i{
-        font-size: 1.5rem;
-        color: $color-base;
-        right: 60px;
-        transform: rotate(0);
-    }
+    span{
         &::after{
             position: absolute;
-            right: -60px;
+            right: 0;
             background: $color-tertiary;
             width: 40px;
             height: 2.5rem;
-           transform: translateX(60px); 
        }
+    }
+     i{
+        font-size: 1.5rem;
+        color: $color-base;
+        right: 0;
+    }
+        
 
 }
