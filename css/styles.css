@@ -105,10 +105,11 @@ form {
   background-position: right;
   cursor: pointer;
   opacity: 1;
-  transition: opacity 500ms;
+  transition: opacity 250ms;
 }
 .btn:hover {
   opacity: 0.7;
+  background-position: left;
   box-shadow: 1px 1px 4px 1px #d3d3d31px 1px 4px 1px #d3d3d3;
 }
 

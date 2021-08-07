@@ -31,9 +31,10 @@
         background-position: right;
         cursor: pointer;
         opacity: 1;
-        transition: opacity 500ms;
+        transition: opacity 250ms;
         &:hover{
             opacity: .7;
+            background-position: left;
             box-shadow: $shadow + $shadow;
         }
 }
