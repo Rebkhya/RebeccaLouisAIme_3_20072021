@@ -128,6 +128,47 @@
           }
 }
 
+@keyframes heart-progress{
+    from{
+        transform: scaleY(0);
+    }
+    to{
+        transform: scaleY(1);
+                opacity: 1;
+    }
+}
+
+.heart i{
+    transform: scaleY(1);
+    color: grey;
+    background-color: transparent;
+    transition: transform opacity 500ms;
+    position: absolute;
+    z-index: 1;
+        &::after{
+            content: "";
+            background-clip: content-box, border-box;
+            background-origin: border-box;
+            position: absolute;
+            transform-origin: bottom;
+            background-image: $color-deg;
+            background-size: contain;
+            z-index: -1;
+            bottom: 0;
+            top: 0;
+            right: 0;
+            left: 0;
+            opacity: 0;
+        }
+        &:active{
+            &::after{
+                animation: heart-progress;
+                animation-duration: 1000ms;
+            }
+        }
+    }
+
+
 .menu__card__img{
     @include card-img;
     margin-bottom: .5rem;

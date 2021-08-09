@@ -16,11 +16,12 @@
 @mixin card-img{
     width: 100%;
     height: 150px;
+    border: none;
     object-fit: cover;
     border-radius: 20px 20px 0px 0px;
     object-position: 50% 63%;
 }
-@mixin btn {
+@mixin btn{
         margin: 1rem 0;
         border-radius: 100rem;
         border: none;
@@ -35,7 +36,7 @@
         &:hover{
             opacity: .7;
             background-position: left;
-            box-shadow: $shadow + $shadow;
+            box-shadow: 3px 3px 10px 5px $color-shadow;
         }
 }
 

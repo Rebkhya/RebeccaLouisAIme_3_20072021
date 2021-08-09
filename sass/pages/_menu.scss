@@ -9,67 +9,156 @@
         color: black;
     }
 }
-
-
 .liste{
-        &__menu{
+    @include card($color-back);
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    &__menu{
         @include card($color-back,  $bord: map-get($bord-rad, menu-card));
         text-align: left;
         z-index: 1;
+        padding: 1rem;
         position: relative;
         top: -2.5rem;
     }
     & img{
         width: 100%;
-        position: relative;
+        position: RE;
         z-index: -1;
     }
     & article{
         @include card($bord: map-get($bord-rad, card-card));
+        @include flexMid;
+        align-items: flex-start;
+        flex-direction: column;
+        box-shadow: $shadow;
         height: 3rem;
-        margin: .5rem;
+        margin-bottom: .8rem;
+        width: 90%;
         position: relative;
+        cursor: pointer;
     }
 }
-.liste__text{
-        padding: .5em .5rem;
-        & span{
-            font-weight: bold;
-            position: absolute;
-            z-index: 1;
-            right: 0;
-            &:active{
-                & ::after{
-                    content: "";
-                    border-right: none;
-                    border-radius: 0 20px 20px 0;
-                    position: absolute;
-                    z-index: -1;
-                    background: $color-tertiary;
-                    width: 40px;
-                    height: 2.5rem;
-                    padding:  .5em .5rem;
-                    right: 0;
-                    top: 0;
-                }
-            }
-        }
-}
-.liste__check{
-    span{
-        &::after{
-            position: absolute;
-            right: 0;
-            background: $color-tertiary;
-            width: 40px;
-            height: 2.5rem;
-       }
-    }
-     i{
-        font-size: 1.5rem;
-        color: $color-base;
-        right: 0;
-    }
-        
 
+.liste{
+    &__text{
+        @include flexMid;
+        width: 0;
+        position:absolute;
+        z-index: -1;
+        padding: .5rem .5rem;
+    &__ellips{
+        width: 60%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        }
+    &__price{
+        text-align: right;
+        font-weight: bold;
+        margin-left: 11rem;
+        width: 40%;
+        position: absolute;
+        z-index: 1;
+        bottom: 20%;
+        transform: translateX(0%);
+    }
+    }
+    &__check{
+        @include flexMid;
+        position:absolute;
+        width: 60px;
+        opacity: 0;
+        z-index: 1;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        transform-origin: right;
+        i{
+            color: $color-base;
+            z-index: 1;
+            transform-origin: center; 
+            }
+        &::after{
+                content: "";
+                border-radius: 0 20px 20px 0;
+                position: absolute;
+                z-index: -1;
+                background: $color-tertiary;
+                width: 60px;
+                height: 100%;
+                right: 0;
+                top: 0;
+                bottom: 0;
+           }
+    }
 }
+
+.slid{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+      &__in{
+        cursor: pointer;
+        transform-origin: top;
+        overflow: hidden;
+        opacity: 0;
+        animation: slidein $anim-dur forwards ease-in-out;
+        @for $i from 1 through $num-cards {
+          &--#{$i} {
+            animation-delay: $anim-delay *  $i;
+        }
+      }
+    }
+    &:hover{
+        .liste__check{
+           
+            animation: slid $anim-dur;
+          
+        i{
+          animation: rot $anim-dur;
+          animation-delay: 200ms;
+        }
+      } 
+      .liste__check__price{
+          transform: translateX(0%);
+      }
+    }
+  }
+  
+  @keyframes slidein {
+    0% { transform: scaleY(0);
+    transform: translateY(100%); }
+    20%{
+      transform: scaleY(0.4);
+      transform: translateY(100%);
+    }
+    80%{
+      transform: scaleY(0.8);
+      transform: translateY(0%);
+    }
+    100%   { 
+        opacity: 1;
+        transform: scaleY(1);
+}
+  }
+
+  @keyframes rot{
+    0%{
+      transform: rotate(-1turn);
+    }
+    100%{
+      transform: rotate(1turn);
+    }
+  }
+  
+  @keyframes slid{
+    0%{
+      transform: translateX(100%);
+    }
+    100%{
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
