@@ -16,13 +16,19 @@ body{
 .titres__icon{
     justify-content: space-around;
    span{
-       margin-left: 2rem;
+       margin-left: 3rem;
    }
 }
 
-.liste__underline{
-    border-bottom: 2px solid $color-tertiary;
-    width: 10%;
-    padding: 0;
-    margin: 1rem;
+.liste{
+    &__underline{
+        border-bottom: 2px solid $color-tertiary;
+        width: 10%;
+        padding: 0;
+        margin: 1rem;
+    }
+    .btn{
+        padding: .8rem 2rem;
+    }
+
 }
