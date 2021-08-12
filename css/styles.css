@@ -1,4 +1,4 @@
-body {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -142,14 +142,16 @@ form {
 }
 
 .about {
+  justify-content: flex-start;
   text-align: left;
   color: #ffffff;
   background-color: #353535;
   padding-bottom: 1.5rem;
+  padding-left: 2.5rem;
 }
 .about h2 {
   margin: 0;
-  padding: 1rem 2.5rem 0;
+  padding: 1rem 0;
   font-size: 1.3rem;
 }
 .about li i {
@@ -159,6 +161,145 @@ form {
   color: #ffffff;
 }
 
+.content {
+  opacity: 0;
+  animation: fade-in 3S ease 1 forwards;
+  animation-delay: 3.5s;
+}
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #ffffff;
+  position: absolute;
+  text-align: center;
+  opacity: 0;
+  animation: fade-in 3.2S ease 1 forwards reverse;
+  animation-delay: 0.5s;
+}
+.loader h1 {
+  position: absolute;
+  color: black;
+  font-size: 4rem;
+  top: 70%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  animation: up 2.5s linear forwards;
+  animation-delay: 1.5s;
+}
+.loader > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.loader > div .plate {
+  position: absolute;
+  color: #dddddd;
+  font-size: 2rem;
+  animation: down 2.5s forwards;
+  animation-delay: 1.5s;
+}
+.loader > div .circle {
+  width: 100%;
+  position: relative;
+  top: 60%;
+  bottom: 0;
+  background: linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position: 62;
+  font-size: 3rem;
+  opacity: 0;
+  animation: down-rot 2.5s linear forwards;
+  animation-delay: 1.3s;
+}
+.loader::after {
+  content: "";
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 15px solid #535353;
+  width: 100px;
+  height: 100px;
+  border-top-color: #99E2D0;
+  padding: 50px;
+  border-image-slice: 9;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  animation: spin 1.8s linear forwards;
+  animation-timing-function: steps(500, end);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(-1turn);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(1turn);
+    opacity: 0;
+  }
+}
+@keyframes down {
+  0% {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(550%);
+    opacity: 0;
+  }
+}
+@keyframes down-rot {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+    transform: rotateZ(45deg);
+  }
+  50%, 100% {
+    transform: translateY(-100%);
+    transform: rotateZ(90deg);
+    opacity: 1;
+  }
+}
+@keyframes up {
+  0% {
+    transform: scaleY(0);
+    transform: translateY(0%);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1);
+    transform: translateY(-80%);
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .presentation {
   background-color: #f6f6f6;
   border-radius: 0;
@@ -219,6 +360,7 @@ form {
   justify-content: flex-start;
 }
 .function ol {
+  justify-content: center;
   counter-reset: li;
 }
 .function li::before {
@@ -285,6 +427,7 @@ form {
   flex-wrap: wrap;
   padding-bottom: 3rem;
   text-align: left;
+  justify-content: center;
   background-color: #f6f6f6;
   border-radius: 0;
   height: auto;
@@ -366,11 +509,11 @@ form {
   transform: scaleY(0);
 }
 .heart:active > .heart__empty {
-  animation: heart-progress ease-in-out both;
+  animation: heart-progress 1s ease-in-out forwards;
   animation-duration: 900ms;
 }
 .heart:active > .heart__full {
-  animation: heart-progress-full ease-in-out both;
+  animation: heart-progress-full 1s ease-in-out forwards;
   animation-duration: 1000ms;
 }
 
@@ -435,7 +578,8 @@ form {
   border-radius: 20px 20px 20px 20px;
   height: auto;
   box-shadow: 2px 2px 15px 2px #dddddd;
-  height: 3rem;
+  height: 4rem;
+  padding: 0.5rem 0.5rem;
   margin-bottom: 0.8rem;
   width: 95%;
 }
@@ -448,31 +592,23 @@ form {
   align-items: flex-start;
   flex-wrap: wrap;
   flex-direction: column;
-  cursor: pointer;
   width: 0;
   position: relative;
   z-index: -1;
-  padding: 0.5rem 0.5rem;
   transform-origin: right;
 }
 .liste__text__ellips {
   width: 85%;
+  height: auto;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  z-index: 1;
 }
 .liste__text__price {
+  text-align: left;
   justify-content: flex-end;
   align-items: flex-end;
   font-weight: bold;
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  top: 50%;
-  bottom: 50%;
-  right: 0;
 }
 .liste__check {
   display: flex;
@@ -542,18 +678,183 @@ form {
 .slid__in--10 {
   animation-delay: 2000ms;
 }
-.slid:active .liste__text__ellips {
-  width: 65%;
+.slid:hover .liste__in--1 {
+  animation-delay: 200ms;
 }
-.slid:active .liste__text__price {
+.slid:hover .liste__in--1__ellips {
+  width: 60%;
+}
+.slid:hover .liste__in--1__price {
   animation: slid 2000ms;
   padding-right: 20px;
 }
-.slid:active .liste__check {
+.slid:hover .liste__in--1__check {
   animation: slid 2000ms;
   animation-delay: 400ms;
 }
-.slid:active .liste__check i {
+.slid:hover .liste__in--1__check i {
+  animation: rot 2000ms;
+  animation-delay: 200ms;
+}
+.slid:hover .liste__in--2 {
+  animation-delay: 400ms;
+}
+.slid:hover .liste__in--2__ellips {
+  width: 60%;
+}
+.slid:hover .liste__in--2__price {
+  animation: slid 2000ms;
+  padding-right: 20px;
+}
+.slid:hover .liste__in--2__check {
+  animation: slid 2000ms;
+  animation-delay: 400ms;
+}
+.slid:hover .liste__in--2__check i {
+  animation: rot 2000ms;
+  animation-delay: 200ms;
+}
+.slid:hover .liste__in--3 {
+  animation-delay: 600ms;
+}
+.slid:hover .liste__in--3__ellips {
+  width: 60%;
+}
+.slid:hover .liste__in--3__price {
+  animation: slid 2000ms;
+  padding-right: 20px;
+}
+.slid:hover .liste__in--3__check {
+  animation: slid 2000ms;
+  animation-delay: 400ms;
+}
+.slid:hover .liste__in--3__check i {
+  animation: rot 2000ms;
+  animation-delay: 200ms;
+}
+.slid:hover .liste__in--4 {
+  animation-delay: 800ms;
+}
+.slid:hover .liste__in--4__ellips {
+  width: 60%;
+}
+.slid:hover .liste__in--4__price {
+  animation: slid 2000ms;
+  padding-right: 20px;
+}
+.slid:hover .liste__in--4__check {
+  animation: slid 2000ms;
+  animation-delay: 400ms;
+}
+.slid:hover .liste__in--4__check i {
+  animation: rot 2000ms;
+  animation-delay: 200ms;
+}
+.slid:hover .liste__in--5 {
+  animation-delay: 1000ms;
+}
+.slid:hover .liste__in--5__ellips {
+  width: 60%;
+}
+.slid:hover .liste__in--5__price {
+  animation: slid 2000ms;
+  padding-right: 20px;
+}
+.slid:hover .liste__in--5__check {
+  animation: slid 2000ms;
+  animation-delay: 400ms;
+}
+.slid:hover .liste__in--5__check i {
+  animation: rot 2000ms;
+  animation-delay: 200ms;
+}
+.slid:hover .liste__in--6 {
+  animation-delay: 1200ms;
+}
+.slid:hover .liste__in--6__ellips {
+  width: 60%;
+}
+.slid:hover .liste__in--6__price {
+  animation: slid 2000ms;
+  padding-right: 20px;
+}
+.slid:hover .liste__in--6__check {
+  animation: slid 2000ms;
+  animation-delay: 400ms;
+}
+.slid:hover .liste__in--6__check i {
+  animation: rot 2000ms;
+  animation-delay: 200ms;
+}
+.slid:hover .liste__in--7 {
+  animation-delay: 1400ms;
+}
+.slid:hover .liste__in--7__ellips {
+  width: 60%;
+}
+.slid:hover .liste__in--7__price {
+  animation: slid 2000ms;
+  padding-right: 20px;
+}
+.slid:hover .liste__in--7__check {
+  animation: slid 2000ms;
+  animation-delay: 400ms;
+}
+.slid:hover .liste__in--7__check i {
+  animation: rot 2000ms;
+  animation-delay: 200ms;
+}
+.slid:hover .liste__in--8 {
+  animation-delay: 1600ms;
+}
+.slid:hover .liste__in--8__ellips {
+  width: 60%;
+}
+.slid:hover .liste__in--8__price {
+  animation: slid 2000ms;
+  padding-right: 20px;
+}
+.slid:hover .liste__in--8__check {
+  animation: slid 2000ms;
+  animation-delay: 400ms;
+}
+.slid:hover .liste__in--8__check i {
+  animation: rot 2000ms;
+  animation-delay: 200ms;
+}
+.slid:hover .liste__in--9 {
+  animation-delay: 1800ms;
+}
+.slid:hover .liste__in--9__ellips {
+  width: 60%;
+}
+.slid:hover .liste__in--9__price {
+  animation: slid 2000ms;
+  padding-right: 20px;
+}
+.slid:hover .liste__in--9__check {
+  animation: slid 2000ms;
+  animation-delay: 400ms;
+}
+.slid:hover .liste__in--9__check i {
+  animation: rot 2000ms;
+  animation-delay: 200ms;
+}
+.slid:hover .liste__in--10 {
+  animation-delay: 2000ms;
+}
+.slid:hover .liste__in--10__ellips {
+  width: 60%;
+}
+.slid:hover .liste__in--10__price {
+  animation: slid 2000ms;
+  padding-right: 20px;
+}
+.slid:hover .liste__in--10__check {
+  animation: slid 2000ms;
+  animation-delay: 400ms;
+}
+.slid:hover .liste__in--10__check i {
   animation: rot 2000ms;
   animation-delay: 200ms;
 }

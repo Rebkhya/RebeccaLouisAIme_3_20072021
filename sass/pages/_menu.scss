@@ -33,7 +33,8 @@
     & article{
         @include card($bord: map-get($bord-rad, card-card));
         box-shadow: $shadow;
-        height: 3rem;
+        height: 4rem;
+        padding: .5rem .5rem;
         margin-bottom: .8rem;
         width: 95%;
         
@@ -47,30 +48,26 @@
         align-items: flex-start;
         flex-wrap: wrap;
         flex-direction: column;
-        cursor: pointer;
         width: 0;
         position:relative;
         z-index: -1;
-        padding: .5rem .5rem;
         transform-origin: right;
     &__ellips{
       width: 85%;
+      height: auto;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        z-index: 1;
+        
         }
     &__price{
+      text-align: left;
       justify-content: flex-end;
       align-items: flex-end;
       font-weight: bold;
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      top: 50%;
-      bottom: 50%;
-      right: 0;
+    
+    
+    
   }
     }
     &__check{
@@ -116,25 +113,30 @@
         }
       }
     }
-  &:active{
+  &:hover{
     .liste{
-      &__text{
+      &__in{
+        @for $d from 1 through $num-cards {
+          &--#{$d} {
+            animation-delay: $anim-delay *  $d;
         &__ellips{
-          width: 65%;
+          width: 60%;
         }
         &__price{
           animation: slid $anim-dur;
           padding-right: 20px;
         }
+        &__check{       
+                 animation: slid $anim-dur;
+                 animation-delay: 400ms;
+             i{
+               animation: rot $anim-dur;
+               animation-delay: 200ms;
+             }
+           } 
       }
-      &__check{       
-               animation: slid $anim-dur;
-               animation-delay: 400ms;
-           i{
-             animation: rot $anim-dur;
-             animation-delay: 200ms;
-           }
-         } 
+        }
+      }
     }
     }
 
