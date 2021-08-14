@@ -51,6 +51,7 @@
             bottom: 0;
             background: $color-deg;
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             background-position: left;
             font-size: 3rem;
@@ -322,6 +323,7 @@
 &__full{
         background-image: $color-deg;
         -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
         position: relative;
         z-index: -1;
