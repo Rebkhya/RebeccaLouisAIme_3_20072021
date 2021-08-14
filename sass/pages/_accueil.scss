@@ -50,9 +50,9 @@
             top: 60%;
             bottom: 0;
             background: $color-deg;
-            -webkit-background-clip: text;
             background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            color: transparent;
             background-position: left;
             font-size: 3rem;
             opacity: 0;
@@ -322,9 +322,9 @@
 }
 &__full{
         background-image: $color-deg;
+        background-clip: text; 
         -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: transparent;
         position: relative;
         z-index: -1;
         bottom: 0;
@@ -337,11 +337,11 @@
 }
     &:active > .heart{
         &__empty{
-            animation: heart-progress 1s ease-in-out forwards ;
+            animation: heart-progress 1s ease-in-out both ;
             animation-duration: 900ms;
         }
         &__full{
-            animation: heart-progress-full 1s ease-in-out forwards;
+            animation: heart-progress-full 1s ease-in-out both;
             animation-duration: 1000ms;
         }
            
