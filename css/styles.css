@@ -14,20 +14,21 @@
   flex-direction: row;
 }
 
-.titres__icon {
-  justify-content: space-around;
+.titles__icon {
+  display: flex;
+  justify-content: space-between;
 }
-.titres__icon span {
-  margin-left: 3rem;
+.titles__icon span {
+  margin-right: 4%;
 }
 
-.liste__underline {
+.list__underline {
   border-bottom: 2px solid #99E2D0;
   width: 10%;
   padding: 0;
   margin: 1rem;
 }
-.liste .btn {
+.list .btn {
   padding: 0.8rem 2rem;
 }
 
@@ -38,10 +39,10 @@ body {
   text-align: center;
 }
 
-.titres {
+.titles {
   font-family: "Shrikhand", cursive;
 }
-.titres i {
+.titles i {
   font-weight: 400;
   color: grey;
 }
@@ -77,15 +78,15 @@ p {
   margin: 0;
 }
 
-.liste__text h3 {
+.list__text h3 {
   font-size: 1rem;
 }
-.liste__text p {
+.list__text p {
   font-size: 1rem;
   padding-left: 1rem;
 }
 
-.liste__underline {
+.list__underline {
   font-weight: 300;
   font-size: 1.2rem;
 }
@@ -105,7 +106,7 @@ form {
   border: none;
   color: #ffffff;
   padding: 0.8rem 1.2rem;
-  box-shadow: 2px 2px 15px 2px #dddddd;
+  box-shadow: 0.25rem 0.25rem 1rem #dbdbdb;
   background-image: linear-gradient(#9356DC, #FF79DA);
   background-position: right;
   cursor: pointer;
@@ -115,7 +116,7 @@ form {
 .btn:hover {
   opacity: 0.7;
   background-position: left;
-  box-shadow: 3px 3px 10px 5px #dddddd;
+  box-shadow: 3px 3px 10px 5px #dbdbdb;
 }
 
 .new::before {
@@ -163,20 +164,20 @@ form {
 
 .content {
   opacity: 0;
-  animation: fade-in 3S ease 1 forwards;
-  animation-delay: 3.5s;
+  animation: fade-in 3.5S ease 1 forwards;
+  animation-delay: 3s;
 }
 
 .loader {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
   background-color: #ffffff;
   position: absolute;
   text-align: center;
   opacity: 0;
-  animation: fade-in 3.2S ease 1 forwards reverse;
-  animation-delay: 0.5s;
+  animation: fade-in 3.5S ease 1 forwards reverse;
+  animation-delay: 1s;
 }
 .loader h1 {
   position: absolute;
@@ -188,7 +189,7 @@ form {
   bottom: 0;
   opacity: 0;
   animation: up 2.5s linear forwards;
-  animation-delay: 1.5s;
+  animation-delay: 1s;
 }
 .loader > div {
   display: flex;
@@ -205,7 +206,7 @@ form {
 }
 .loader > div .plate {
   position: absolute;
-  color: #dddddd;
+  color: #dbdbdb;
   font-size: 2rem;
   animation: down 2.5s forwards;
   animation-delay: 1.5s;
@@ -218,7 +219,7 @@ form {
   background: linear-gradient(#9356DC, #FF79DA);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-position: 62;
+  background-position: left;
   font-size: 3rem;
   opacity: 0;
   animation: down-rot 2.5s linear forwards;
@@ -311,7 +312,7 @@ form {
   text-align: center;
 }
 .presentation__local {
-  background-color: #dddddd;
+  background-color: #dbdbdb;
   width: 100%;
 }
 .presentation__local form {
@@ -386,7 +387,7 @@ form {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  box-shadow: 2px 2px 15px 2px #dddddd;
+  box-shadow: 0.25rem 0.25rem 1rem #dbdbdb;
   font-weight: 500;
   font-size: 0.9rem;
   margin: 0.7rem 0;
@@ -399,7 +400,7 @@ form {
 }
 .function__use:hover::after {
   opacity: 0.9;
-  box-shadow: 2px 2px 15px 2px #dddddd2px 2px 15px 2px #dddddd;
+  box-shadow: 0.5rem 0.5rem 1rem #c2c2c2;
 }
 .function__use:hover i {
   color: #9356DC;
@@ -547,7 +548,7 @@ form {
   color: black;
 }
 
-.liste {
+.list {
   background-color: #f6f6f6;
   border-radius: 0;
   height: auto;
@@ -555,7 +556,7 @@ form {
   width: 100%;
   z-index: 1;
 }
-.liste__menu {
+.list__menu {
   background-color: #f6f6f6;
   border-radius: 30px 30px 0 0;
   height: auto;
@@ -565,7 +566,7 @@ form {
   position: relative;
   top: -2.5rem;
 }
-.liste img {
+.list img {
   width: 100%;
   position: relative;
   z-index: -1;
@@ -573,18 +574,15 @@ form {
   object-fit: cover;
   object-position: 50% 63%;
 }
-.liste article {
+.list article {
   background-color: #ffffff;
   border-radius: 20px 20px 20px 20px;
   height: auto;
-  box-shadow: 2px 2px 15px 2px #dddddd;
+  box-shadow: 0.25rem 0.25rem 1rem #dbdbdb;
   height: 4rem;
   padding: 0.5rem 0.5rem;
   margin-bottom: 0.8rem;
-  width: 95%;
-}
-
-.liste__text {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -592,50 +590,57 @@ form {
   align-items: flex-start;
   flex-wrap: wrap;
   flex-direction: column;
-  width: 0;
   position: relative;
-  z-index: -1;
+}
+
+.list__text {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
   transform-origin: right;
 }
-.liste__text__ellips {
+.list__text__ellips {
   width: 85%;
-  height: auto;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.liste__text__price {
+.list__text__price {
   text-align: left;
   justify-content: flex-end;
   align-items: flex-end;
   font-weight: bold;
+  position: relative;
+  z-index: 1;
 }
-.liste__check {
+.list__check {
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  width: 60px;
-  opacity: 0;
   z-index: 1;
-  bottom: 0;
-  top: 0;
+  width: auto;
+  text-align: center;
   right: 0;
+  top: 0;
+  bottom: 0;
+  transform: translateX(100%);
 }
-.liste__check i {
+.list__check i {
+  position: absolute;
   color: #ffffff;
-  z-index: 1;
+  z-index: 3;
   transform-origin: center;
   font-size: 1.5rem;
 }
-.liste__check::after {
+.list__check::after {
   content: "";
   border-radius: 0 20px 20px 0;
-  position: absolute;
-  z-index: -1;
+  position: relative;
+  z-index: 2;
   background: #99E2D0;
-  width: 60px;
-  height: 100%;
+  width: 3rem;
+  height: 4rem;
   right: 0;
   top: 0;
   bottom: 0;
@@ -678,185 +683,109 @@ form {
 .slid__in--10 {
   animation-delay: 2000ms;
 }
-.slid:hover .liste__in--1 {
-  animation-delay: 200ms;
+
+.list__in {
+  overflow: hidden;
 }
-.slid:hover .liste__in--1__ellips {
-  width: 60%;
+.list__in:hover > .list__in--1 {
+  animation: slid 800ms ease-in-out 0.1s alternate-reverse both;
+  animation-play-state: running, paused;
 }
-.slid:hover .liste__in--1__price {
-  animation: slid 2000ms;
-  padding-right: 20px;
+.list__in:hover > .list__in--1 i {
+  animation: rot 600ms ease-in-out 0.2s alternate-reverse both;
 }
-.slid:hover .liste__in--1__check {
-  animation: slid 2000ms;
-  animation-delay: 400ms;
+.list__in:hover > .list__in--1__ellips {
+  width: 65%;
 }
-.slid:hover .liste__in--1__check i {
-  animation: rot 2000ms;
-  animation-delay: 200ms;
+.list__in:hover > .list__in--2 {
+  animation: slid 800ms ease-in-out 0.1s alternate-reverse both;
+  animation-play-state: running, paused;
 }
-.slid:hover .liste__in--2 {
-  animation-delay: 400ms;
+.list__in:hover > .list__in--2 i {
+  animation: rot 600ms ease-in-out 0.2s alternate-reverse both;
 }
-.slid:hover .liste__in--2__ellips {
-  width: 60%;
+.list__in:hover > .list__in--2__ellips {
+  width: 65%;
 }
-.slid:hover .liste__in--2__price {
-  animation: slid 2000ms;
-  padding-right: 20px;
+.list__in:hover > .list__in--3 {
+  animation: slid 800ms ease-in-out 0.1s alternate-reverse both;
+  animation-play-state: running, paused;
 }
-.slid:hover .liste__in--2__check {
-  animation: slid 2000ms;
-  animation-delay: 400ms;
+.list__in:hover > .list__in--3 i {
+  animation: rot 600ms ease-in-out 0.2s alternate-reverse both;
 }
-.slid:hover .liste__in--2__check i {
-  animation: rot 2000ms;
-  animation-delay: 200ms;
+.list__in:hover > .list__in--3__ellips {
+  width: 65%;
 }
-.slid:hover .liste__in--3 {
-  animation-delay: 600ms;
+.list__in:hover > .list__in--4 {
+  animation: slid 800ms ease-in-out 0.1s alternate-reverse both;
+  animation-play-state: running, paused;
 }
-.slid:hover .liste__in--3__ellips {
-  width: 60%;
+.list__in:hover > .list__in--4 i {
+  animation: rot 600ms ease-in-out 0.2s alternate-reverse both;
 }
-.slid:hover .liste__in--3__price {
-  animation: slid 2000ms;
-  padding-right: 20px;
+.list__in:hover > .list__in--4__ellips {
+  width: 65%;
 }
-.slid:hover .liste__in--3__check {
-  animation: slid 2000ms;
-  animation-delay: 400ms;
+.list__in:hover > .list__in--5 {
+  animation: slid 800ms ease-in-out 0.1s alternate-reverse both;
+  animation-play-state: running, paused;
 }
-.slid:hover .liste__in--3__check i {
-  animation: rot 2000ms;
-  animation-delay: 200ms;
+.list__in:hover > .list__in--5 i {
+  animation: rot 600ms ease-in-out 0.2s alternate-reverse both;
 }
-.slid:hover .liste__in--4 {
-  animation-delay: 800ms;
+.list__in:hover > .list__in--5__ellips {
+  width: 65%;
 }
-.slid:hover .liste__in--4__ellips {
-  width: 60%;
+.list__in:hover > .list__in--6 {
+  animation: slid 800ms ease-in-out 0.1s alternate-reverse both;
+  animation-play-state: running, paused;
 }
-.slid:hover .liste__in--4__price {
-  animation: slid 2000ms;
-  padding-right: 20px;
+.list__in:hover > .list__in--6 i {
+  animation: rot 600ms ease-in-out 0.2s alternate-reverse both;
 }
-.slid:hover .liste__in--4__check {
-  animation: slid 2000ms;
-  animation-delay: 400ms;
+.list__in:hover > .list__in--6__ellips {
+  width: 65%;
 }
-.slid:hover .liste__in--4__check i {
-  animation: rot 2000ms;
-  animation-delay: 200ms;
+.list__in:hover > .list__in--7 {
+  animation: slid 800ms ease-in-out 0.1s alternate-reverse both;
+  animation-play-state: running, paused;
 }
-.slid:hover .liste__in--5 {
-  animation-delay: 1000ms;
+.list__in:hover > .list__in--7 i {
+  animation: rot 600ms ease-in-out 0.2s alternate-reverse both;
 }
-.slid:hover .liste__in--5__ellips {
-  width: 60%;
+.list__in:hover > .list__in--7__ellips {
+  width: 65%;
 }
-.slid:hover .liste__in--5__price {
-  animation: slid 2000ms;
-  padding-right: 20px;
+.list__in:hover > .list__in--8 {
+  animation: slid 800ms ease-in-out 0.1s alternate-reverse both;
+  animation-play-state: running, paused;
 }
-.slid:hover .liste__in--5__check {
-  animation: slid 2000ms;
-  animation-delay: 400ms;
+.list__in:hover > .list__in--8 i {
+  animation: rot 600ms ease-in-out 0.2s alternate-reverse both;
 }
-.slid:hover .liste__in--5__check i {
-  animation: rot 2000ms;
-  animation-delay: 200ms;
+.list__in:hover > .list__in--8__ellips {
+  width: 65%;
 }
-.slid:hover .liste__in--6 {
-  animation-delay: 1200ms;
+.list__in:hover > .list__in--9 {
+  animation: slid 800ms ease-in-out 0.1s alternate-reverse both;
+  animation-play-state: running, paused;
 }
-.slid:hover .liste__in--6__ellips {
-  width: 60%;
+.list__in:hover > .list__in--9 i {
+  animation: rot 600ms ease-in-out 0.2s alternate-reverse both;
 }
-.slid:hover .liste__in--6__price {
-  animation: slid 2000ms;
-  padding-right: 20px;
+.list__in:hover > .list__in--9__ellips {
+  width: 65%;
 }
-.slid:hover .liste__in--6__check {
-  animation: slid 2000ms;
-  animation-delay: 400ms;
+.list__in:hover > .list__in--10 {
+  animation: slid 800ms ease-in-out 0.1s alternate-reverse both;
+  animation-play-state: running, paused;
 }
-.slid:hover .liste__in--6__check i {
-  animation: rot 2000ms;
-  animation-delay: 200ms;
+.list__in:hover > .list__in--10 i {
+  animation: rot 600ms ease-in-out 0.2s alternate-reverse both;
 }
-.slid:hover .liste__in--7 {
-  animation-delay: 1400ms;
-}
-.slid:hover .liste__in--7__ellips {
-  width: 60%;
-}
-.slid:hover .liste__in--7__price {
-  animation: slid 2000ms;
-  padding-right: 20px;
-}
-.slid:hover .liste__in--7__check {
-  animation: slid 2000ms;
-  animation-delay: 400ms;
-}
-.slid:hover .liste__in--7__check i {
-  animation: rot 2000ms;
-  animation-delay: 200ms;
-}
-.slid:hover .liste__in--8 {
-  animation-delay: 1600ms;
-}
-.slid:hover .liste__in--8__ellips {
-  width: 60%;
-}
-.slid:hover .liste__in--8__price {
-  animation: slid 2000ms;
-  padding-right: 20px;
-}
-.slid:hover .liste__in--8__check {
-  animation: slid 2000ms;
-  animation-delay: 400ms;
-}
-.slid:hover .liste__in--8__check i {
-  animation: rot 2000ms;
-  animation-delay: 200ms;
-}
-.slid:hover .liste__in--9 {
-  animation-delay: 1800ms;
-}
-.slid:hover .liste__in--9__ellips {
-  width: 60%;
-}
-.slid:hover .liste__in--9__price {
-  animation: slid 2000ms;
-  padding-right: 20px;
-}
-.slid:hover .liste__in--9__check {
-  animation: slid 2000ms;
-  animation-delay: 400ms;
-}
-.slid:hover .liste__in--9__check i {
-  animation: rot 2000ms;
-  animation-delay: 200ms;
-}
-.slid:hover .liste__in--10 {
-  animation-delay: 2000ms;
-}
-.slid:hover .liste__in--10__ellips {
-  width: 60%;
-}
-.slid:hover .liste__in--10__price {
-  animation: slid 2000ms;
-  padding-right: 20px;
-}
-.slid:hover .liste__in--10__check {
-  animation: slid 2000ms;
-  animation-delay: 400ms;
-}
-.slid:hover .liste__in--10__check i {
-  animation: rot 2000ms;
-  animation-delay: 200ms;
+.list__in:hover > .list__in--10__ellips {
+  width: 65%;
 }
 
 @keyframes slidein {
@@ -887,11 +816,10 @@ form {
 }
 @keyframes slid {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(0%);
-    opacity: 1;
+    transform: translateX(100%);
   }
 }
 
