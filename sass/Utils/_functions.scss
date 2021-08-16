@@ -1,7 +1,0 @@
-@function tint($color){
-    @if ( tint($color) < 25% ) {
-        @return lighten($color, 10%);
-    }@else{
-        @return darken($color, 10%);
-    }
-    }

@@ -18,13 +18,13 @@
     h1{
         position: absolute;
         color: black;
-        font-size: 4rem;
+        font-size: 3rem;
         top: 70%;
         left: 0;
         right: 0; 
         bottom: 0;
         opacity: 0;
-        animation: up 2.5s  linear forwards;
+        animation: up 2.8s  linear forwards;
         animation-delay: 1s;
     }
     &>div{
@@ -41,7 +41,7 @@
             position: absolute;
             color:$color-shadow;
             font-size: 2rem;
-            animation: down 2.5s forwards;
+            animation: down 2.6s forwards;
             animation-delay: 1.5s;
         }
         .circle{
@@ -265,8 +265,9 @@
     justify-content: center;
     @include card($color-back);
         &__card{
-        margin: .5rem;
+        margin: .5rem 1rem;
         @include card ($bord: map-get($bord-rad, card-card));
+        box-shadow: $shadow;
         height: 14rem;
             &__link{
                 flex-wrap: wrap;

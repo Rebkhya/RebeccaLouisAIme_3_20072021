@@ -13,14 +13,18 @@
     display: flex;
     flex-direction: row;
 }
+.header_logo{
+    & h1{
+        padding-right: 3rem;
+    }
+}
 .titles__icon{
     display: flex;
     justify-content: space-between;
    span{
-       margin-right: 4%;
+       margin-right: 10%;
    }
 }
-
 .list{
     &__underline{
         border-bottom: 2px solid $color-tertiary;
