@@ -14,13 +14,14 @@ body{
 }
 .header_logo{
     h1{
-font-size: 2rem;
+    font-size: 2rem;
 }
 }
 @media screen and (min-width: map-get($breakpoints, tablet)){
     .header_logo{
         h1{
     font-size: 3rem;
+    
     }
     }
 }
@@ -28,6 +29,7 @@ font-size: 2rem;
     .header_logo{
         h1{
     font-size: 4rem;
+   
     }
     }
 }
