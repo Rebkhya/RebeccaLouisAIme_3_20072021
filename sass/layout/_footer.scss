@@ -1,14 +1,16 @@
 .about{
-    justify-content: flex-start;
     text-align: left;
     color: $color-base;
     background-color: $color-footer;
     padding-bottom: 1.5rem;
     padding-left: 2.5rem;
     h2{
-        margin: 0;
         padding: 1rem 0;
-        font-size: 1.3rem;
+    }
+    ul{
+        @include flexMid;
+        flex-direction: column;
+        align-items: flex-start;
     }
     li{
         & i{
@@ -16,6 +18,26 @@
         }
         & a{
             color: $color-base;
+        }
+    }
+}
+@media screen and (min-width: map-get($breakpoints, tablet)){
+    .about{
+        ul{
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 95%;
+        }
+    }
+}
+@media screen and (min-width: map-get($breakpoints, destock)){
+    .about{
+        ul{
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 80%;
         }
     }
 }

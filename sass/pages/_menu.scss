@@ -1,8 +1,10 @@
+//header home
 .header_logo{
   flex-direction: row-reverse;
   justify-content: space-around;
   align-items: center;
 }
+//menu details
 .list{
     @include card($color-back);
     position: relative;
@@ -39,14 +41,11 @@
         position: relative;
     }
 }
-
 .list{
     &__text{
       position: relative;
       overflow: hidden;
       white-space: nowrap;
-      
-      cursor: pointer;
       transform-origin: right;
     &__ellips{
       width: 75%;
@@ -98,42 +97,77 @@
            }
     }
 }
-
 .slid{
-      &__in{
-        cursor: pointer;
-        transform-origin: top;
-        overflow: hidden;
-        opacity: 0;
-        animation: slidein $anim-dur forwards ease-in-out;
-        @for $i from 1 through $num-cards {
-          &--#{$i} {
-            animation-delay: $anim-delay *  $i;
+  &__in{
+    cursor: pointer;
+    transform-origin: top;
+    overflow: hidden;
+    opacity: 0;
+    animation: slidein $anim-dur forwards ease-in-out;
+    @for $i from 1 through $num-cards {
+      &--#{$i} {
+        animation-delay: $anim-delay *  $i;
+    }
+  }
+}
+}
+.list{
+  &__in{
+    overflow: hidden;
+    @for $d from 1 through $num-cards {
+      &:hover>&--#{$d} {
+        animation: slid 800ms ease-in-out .1s alternate-reverse both;
+        animation-play-state: running,  paused;
+        i{
+          animation: rot 600ms ease-in-out .2s alternate-reverse both;
+        }
+        &__ellips{
+          width: 59%;
+        }
+        &__price{
+          padding-right: 1.5rem;
         }
       }
+  }
+}
+} 
+
+@media screen and (min-width: map-get($breakpoints, tablet)) {
+  .list{
+    justify-content: center;
+    & img{
+      height: 300px;
+  }
+  }
+}
+@media screen and (min-width: map-get($breakpoints, destock)) {
+  .list{
+    & img{
+      height: 400px;
     }
+    &__text{
+      cursor: pointer;
     }
-    .list{
-      &__in{
-        overflow: hidden;
-        @for $d from 1 through $num-cards {
-          &:hover>&--#{$d} {
-            animation: slid 800ms ease-in-out .1s alternate-reverse both;
-            animation-play-state: running,  paused;
-            i{
-              animation: rot 600ms ease-in-out .2s alternate-reverse both;
-            }
-            &__ellips{
-              width: 59%;
-            }
-            &__price{
-              padding-right: 1.5rem;
-            }
+    &__in{
+      overflow: hidden;
+      @for $d from 1 through $num-cards {
+        &:active>&--#{$d} {
+          animation: slid 800ms ease-in-out .1s alternate-reverse both;
+          animation-play-state: running,  paused;
+          i{
+            animation: rot 600ms ease-in-out .2s alternate-reverse both;
           }
-      }
+          &__ellips{
+            width: 59%;
+          }
+          &__price{
+            padding-right: 1.5rem;
+          }
+        }
     }
-    } 
-  
+  }
+  } 
+}
   
 @keyframes slidein {
   0% { transform: scaleY(0);
