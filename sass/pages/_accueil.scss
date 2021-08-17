@@ -151,7 +151,8 @@
  .presentation{
     @include card($color-back); 
     @include flexMid;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     text-align: center;
     &__local{
         width: 100%;
