@@ -11,6 +11,9 @@
     position: relative;
     width: 100%;
     z-index: 1;
+    &__underline{
+      border-bottom: 2px solid $color-tertiary;
+    }
     &__menu{
         @include card($color-back,  $bord: map-get($bord-rad, menu-card));
         text-align: left;
@@ -62,9 +65,10 @@
       position: absolute;
       padding-right: 0;
       z-index: 1; 
-      right: 13%;
+      right: 0%;
       top: 50%;
       bottom: 50%;
+      transform: translateX(-100%)
   }
     }
     &__check{
@@ -127,7 +131,7 @@
           width: 59%;
         }
         &__price{
-          padding-right: 1.5rem;
+          transform: translateX(-250%);
         }
       }
   }
@@ -154,10 +158,10 @@
       overflow: hidden;
       @for $d from 1 through $num-cards {
         &:active>&--#{$d} {
-          animation: slid 800ms ease-in-out .1s alternate-reverse both;
+          animation: slid 200ms ease-in-out 0s alternate-reverse both;
           animation-play-state: running,  paused;
           i{
-            animation: rot 600ms ease-in-out .2s alternate-reverse both;
+            animation: rot 150ms ease-in-out .2s alternate-reverse both;
           }
           &__ellips{
             width: 59%;
