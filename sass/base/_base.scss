@@ -22,9 +22,11 @@
 }
 .list{
     &__underline{
-        width: 50px;
-        padding: 0;
-        margin: 1rem;
+        margin-bottom: 0;
+        &::after{
+            width: 50px;
+            padding: 0;
+        }
     }
     .btn{
         padding: .8rem 2rem;

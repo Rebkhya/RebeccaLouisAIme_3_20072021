@@ -12,7 +12,18 @@
     width: 100%;
     z-index: 1;
     &__underline{
-      border-bottom: 2px solid $color-tertiary;
+      position: relative;
+        z-index: 1;
+      &::after{
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        bottom: 25px;
+        border: 1px solid transparent;
+        border-bottom: 3px solid $color-tertiary;
+
+      }
     }
     &__menu{
         @include card($color-back,  $bord: map-get($bord-rad, menu-card));
