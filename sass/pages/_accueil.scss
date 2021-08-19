@@ -331,7 +331,7 @@
         @include card ($bord: map-get($bord-rad, card-card));
         box-shadow: $shadow;
         height: 14rem;
-            &__link{
+        &__link{
                 flex-wrap: wrap;
             }
           }
@@ -341,17 +341,13 @@
     @include card-img;
     margin-bottom: .5rem;
 } 
-.menu span{
+.menu__card span{
+    justify-content: flex-end;
     position: relative;
     z-index: 2;
-    left: 85%;
-    bottom: 35px;
-    width: 2rem;
-    & i{   
-        font-size: 1.4rem;
-        text-align: right;
-        opacity: 60%;
-    }
+    right: 5%;
+    bottom: 10%;
+
 }
 .menu__card__text{
     margin: 0;
@@ -406,84 +402,3 @@
     }
 }
 
-//heart
-.heart{
-    @include flexMid;
-    position: absolute;
-    z-index: -2;
-    
-&__empty{
-    position: absolute;
-    z-index: 1;
-    bottom: 0;
-    top: 0;
-    right: 0;
-    left: 0;
-    color: gray;
-    transform-origin: top;
-    transform: scaleY(1);
-    
-}
-&__full{
-        background-image: $color-deg;
-        background-clip: text; 
-        -webkit-background-clip: text;
-        color: transparent;
-        position: relative;
-        z-index: -1;
-        bottom: 0;
-        top: 0;
-        right: 0;
-        left: 15%;
-        opacity: 0;
-        transform: scaleY(0);
-        
-}
-    &:active > .heart{
-        &__empty{
-            animation: heart-progress 1s ease-in-out both ;
-            animation-duration: 900ms;
-        }
-        &__full{
-            animation: heart-progress-full 1s ease-in-out both;
-            animation-duration: 1000ms;
-        }
-           
-    }
-}
-@media screen and (min-width: map-get($breakpoints, destock)) {
-    .heart{
-        cursor: pointer;
-        &:hover > .heart{
-            &__empty{
-                animation: heart-progress 1s ease-in-out both ;
-                animation-duration: 900ms;
-            }
-            &__full{
-                animation: heart-progress-full 1s ease-in-out both;
-                animation-duration: 1000ms;
-            }  
-        }
-}
-}
-
-@keyframes heart-progress{
-0%{
-    transform: scaleY(1.0);
-  }
-  100%{
-    transform:scaleY(0.5);
-    opacity: 0;
-  }
-}
-@keyframes heart-progress-full{
-0%{
-    transform: scaleY(0.5);
-  
-  }
-  100%{
-    transform:scaleY(1.0);
-  
-    opacity: 1;
-  }
-}

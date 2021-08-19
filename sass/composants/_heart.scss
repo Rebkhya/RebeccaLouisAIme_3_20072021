@@ -1,0 +1,70 @@
+//heart
+.heart{
+    @include flexMid;
+    position: absolute;
+    cursor: pointer;
+    z-index: -2;
+    & i{   
+        font-size: 1.5rem;
+        text-align: right;
+    }  
+&__empty{
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    color: gray;
+    transform-origin: top;
+    transform: scaleY(1);
+    
+}
+&__full{
+        background-image: $color-deg;
+        background-clip: text; 
+        -webkit-background-clip: text;
+        color: transparent;
+        position: relative;
+        z-index: -1;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        left: 0;
+        opacity: 0;
+        transform: scaleY(0);
+        
+}
+    &:hover > .heart{
+        &__empty{
+            animation: heart-progress 1s ease-in-out both ;
+            animation-duration: 900ms;
+        }
+        &__full{
+            animation: heart-progress-full 1s ease-in-out both;
+            animation-duration: 1000ms;
+        }
+           
+    }
+}
+
+@keyframes heart-progress{
+0%{
+    transform: scaleY(1.0);
+  }
+  100%{
+    transform:scaleY(0.5);
+    opacity: 0;
+  }
+}
+@keyframes heart-progress-full{
+0%{
+    transform: scaleY(0.5);
+  
+  }
+  100%{
+    transform:scaleY(1.0);
+  
+    opacity: 1;
+  }
+}
