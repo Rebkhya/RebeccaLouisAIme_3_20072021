@@ -86,14 +86,6 @@
        
     }
 }
-@media screen and (min-width: map-get($breakpoints, destock)) {
-    .content{
-        opacity: 1;
-    }
-    .loader{
-        animation: none !important;
-    }
-}
 @keyframes spin {
     0%{
         transform: rotate(-1turn);
